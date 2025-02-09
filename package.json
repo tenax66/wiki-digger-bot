@@ -1,0 +1,27 @@
+{
+  "name": "discord-hono-example",
+  "version": "0.0.0",
+  "author": "Luis (https://github.com/luisfun)",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "fix": "biome check --write . && tsc --noEmit",
+    "fix:unsafe": "biome check --write --unsafe . && tsc --noEmit",
+    "dev": "wrangler dev",
+    "register": "tsc && node --env-file=.env dist/register.js",
+    "deploy": "wrangler deploy --minify",
+    "log": "wrangler tail"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@cloudflare/workers-types": "^4.20250129.0",
+    "@types/node": "^22.13.0",
+    "discord-api-types": "^0.37.118",
+    "typescript": "^5.7.3",
+    "wrangler": "^3.107.2"
+  },
+  "dependencies": {
+    "discord-hono": "^0.12.0"
+  }
+}
