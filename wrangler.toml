@@ -1,3 +1,6 @@
 name = "wiki-digger-bot"
 main = "src/index.ts"
 compatibility_date = "2025-02-09"
+
+[triggers]
+crons = ["0 3 * * *"]  # UTC時間の3:00 (日本時間12:00)
