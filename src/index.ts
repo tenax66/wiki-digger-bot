@@ -54,9 +54,10 @@ export default {
   fetch: app.fetch,
   scheduled: async (event: ScheduledEvent, env: Env) => {
     if (!env.DISCORD_WEBHOOK_URL) return
+    const urls = env.DISCORD_WEBHOOK_URL.split(',').map(url => url.trim()).filter(Boolean)
     try {
       const data = await getRandomWiki()
-      await postToDiscord(env.DISCORD_WEBHOOK_URL, data)
+      await Promise.all(urls.map(url => postToDiscord(url, data)))
     } catch (error) {
       console.error('Failed to post random wiki:', error)
     }
