@@ -19,7 +19,7 @@
     "@types/node": "^22.13.0",
     "discord-api-types": "^0.37.118",
     "typescript": "^5.7.3",
-    "wrangler": "^3.107.2"
+    "wrangler": "^4.33.1"
   },
   "dependencies": {
     "discord-hono": "^0.12.0"
