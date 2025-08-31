@@ -7,7 +7,11 @@ interface Env {
 async function getRandomWiki() {
   console.log('Fetching random Wikipedia page...')
   try {
-    const response = await fetch('https://ja.wikipedia.org/api/rest_v1/page/random/summary')
+    const response = await fetch('https://ja.wikipedia.org/api/rest_v1/page/random/summary', {
+      headers: {
+        'User-Agent': 'WikiDiggerBot/1.0 (https://github.com/yourusername/wiki-digger-bot)'
+      }
+    })
     const data = await response.json() as {
       title: string
       extract: string
